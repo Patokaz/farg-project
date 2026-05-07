@@ -20,7 +20,7 @@ watch(() => router.currentRoute.value.path, () => { menuOpen.value = false })
 
       <!-- Logo -->
       <RouterLink to="/" class="logo">
-        <img src="/public/images/logo-farg-fundo-branco.png" alt="">
+        <img src="/public/images/farg-logo-branco.png" alt="FARG Ar-Condicionado">
       </RouterLink>
 
       <!-- Navegação desktop -->
@@ -84,10 +84,6 @@ watch(() => router.currentRoute.value.path, () => { menuOpen.value = false })
 /* ── Logo ── */
 .logo img{
   width: 5rem;
-}
-
-.logo span {
-  color: var(--blue-light);
 }
 
 /* ── Navegação desktop ── */

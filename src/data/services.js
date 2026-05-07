@@ -22,6 +22,7 @@ export const services = [
     tags: ['Carga Térmica', 'Especificação', 'Memorial'],
     // Substitua o ícone SVG abaixo se quiser
     icon: `<rect x="2" y="6" width="20" height="9" rx="1"/><path d="M12 15v3M6 15v3M18 15v3M2 10h20"/>`,
+    image: '/images/servicos/hvac.png', // Substitua pela imagem do serviço
   },
   {
     id: 'instalacao',
@@ -40,6 +41,7 @@ export const services = [
     ],
     tags: ['Execução', 'Comissionamento', 'Testes'],
     icon: `<path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>`,
+    image: '/images/servicos/instalacao.jpeg',
   },
   {
     id: 'ventilacao',
@@ -58,6 +60,7 @@ export const services = [
     ],
     tags: ['IAQ', 'Pressurização', 'Renovação'],
     icon: `<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>`,
+    image: '/images/servicos/ventilacao.jpg',
   },
   {
     id: 'exaustao',
@@ -76,5 +79,6 @@ export const services = [
     ],
     tags: ['Galpões', 'Indústrias', 'NR-15'],
     icon: `<path d="M3 12h18M12 3l9 9-9 9"/>`,
+    image: '/images/servicos/exaustao.jpeg',
   },
 ]

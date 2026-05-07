@@ -12,7 +12,8 @@ import { stats } from '@/data/company.js'
   -->
   <section class="hero">
     <div class="hero-grid-overlay"></div>
-    <div class="hero-accent"></div>
+    <div class="hero-accent">
+    </div>
 
     <div class="hero-content container">
 
@@ -81,11 +82,39 @@ import { stats } from '@/data/company.js'
 .hero-accent {
   position: absolute;
   top: 0; right: 0;
-  width: 45%; height: 100%;
+  width: 45%;
+  height: 100%;
   background: linear-gradient(135deg, transparent 0%, rgba(113,137,174,0.06) 100%);
-  border-left: 1px solid rgba(113,137,174,0.12);
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
+
+.hero-accent video {
+  width: 100%;
+  height: 25rem;
+
+  border-radius: 15px;
+
+  object-fit: cover;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  animation: heroVideoUp 1s ease forwards;
+}
+
+@keyframes heroVideoUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 /* Conteúdo */
 .hero-content {
@@ -172,4 +201,9 @@ h1 em {
   color: rgba(255, 255, 255, 0.4);
   margin-top: 0.2rem;
 }
+
+@media screen and (max-width: 768px) {
+  .hero-accent { display: none; }
+}
+
 </style>

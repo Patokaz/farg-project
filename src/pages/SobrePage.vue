@@ -87,7 +87,7 @@ useReveal()
     </section>
 
     <!-- ── 4. MISSÃO / VISÃO / VALORES ── -->
-    <section class="section">
+    <section class="section" style="padding-top: 0rem ;">
       <div class="container">
         <SectionHeader class="reveal" tag="Nossos Princípios" title="Missão, Visão e Valores" :center="true" />
         <div class="values-grid">

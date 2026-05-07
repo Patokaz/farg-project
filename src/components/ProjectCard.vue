@@ -33,14 +33,6 @@ defineProps({
       <div class="project-client">{{ project.client }} · {{ project.location }}</div>
       <h3>{{ project.title }}</h3>
       <p>{{ project.desc }}</p>
-
-      <!-- Specs técnicas -->
-      <div class="project-specs" v-if="project.specs?.length">
-        <div class="project-spec-item" v-for="spec in project.specs" :key="spec.label">
-          <strong>{{ spec.value }}</strong>
-          <span>{{ spec.label }}</span>
-        </div>
-      </div>
     </div>
 
   </div>

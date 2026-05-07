@@ -13,12 +13,12 @@
 /* ── DESIGN TOKENS ── */
 :root {
   /* Cores principais — edite aqui para mudar o tema */
-  --blue:        #7189ae;
-  --blue-dark:   #4d6490;
+  --blue:        #A60303;
+  --blue-dark:   #7D0202;
   --blue-light:  #9db0cc;
   --cream:       #f1e0cf;
   --cream-dark:  #e4cdb8;
-
+  
   /* Cores neutras */
   --dark:        #1a1f2e;
   --dark-mid:    #2d3447;

@@ -65,7 +65,7 @@ const featuredProjects = projects.filter(p => p.featured)
         <SectionHeader
           class="reveal"
           tag="Nossos Serviços"
-          title="Soluções completas em\nengenharia de climatização"
+          title="Soluções completas em engenharia de climatização"
           subtitle="Da concepção ao comissionamento, oferecemos serviços integrados para projetos de qualquer porte."
           :light="true"
         />
@@ -89,7 +89,7 @@ const featuredProjects = projects.filter(p => p.featured)
         <SectionHeader
           class="reveal"
           tag="Projetos em Destaque"
-          title="Obras que evidenciam\nnossa capacidade técnica"
+          title="Obras que evidenciam nossa capacidade técnica"
         />
         <div class="projects-grid">
           <ProjectCard
@@ -212,13 +212,13 @@ const featuredProjects = projects.filter(p => p.featured)
   transition: border-color 0.25s;
 }
 
-.diff-item:hover { border-color: rgba(113, 137, 174, 0.4); }
+.diff-item:hover { border-color: var(--blue); }
 
 .diff-num {
   font-family: var(--font-display);
   font-size: 3.5rem;
   font-weight: 800;
-  color: rgba(113, 137, 174, 0.2);
+  color: var(--white);
   line-height: 1;
   margin-bottom: 1rem;
 }

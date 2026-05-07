@@ -10,9 +10,9 @@ import { RouterLink } from 'vue-router'
 
         <!-- Brand -->
         <div class="footer-brand">
-          <RouterLink to="/" class="logo">
-            FARG<span> Ar-Condicionado</span>
-          </RouterLink>
+      <RouterLink to="/" class="logo">
+        <img src="/public/images/farg-logo-branco.png" alt="FARG Ar-Condicionado">
+      </RouterLink>
           <p>Engenharia especializada em climatização, ventilação mecânica e exaustão industrial desde {{ companyInfo.foundedYear }}.</p>
         </div>
 
@@ -28,20 +28,19 @@ import { RouterLink } from 'vue-router'
 
         <!-- Serviços -->
         <div class="footer-col">
-          <h4>Serviços</h4>
-          <span>Projetos HVAC</span>
-          <span>Instalação e Montagem</span>
-          <span>Ventilação Mecânica</span>
-          <span>Sistemas de Exaustão</span>
+          <h4>Contatos</h4>
+          <!-- Edite os dados em src/data/company.js -->
+          <span>{{ companyInfo.phone }}</span>
+          <span>{{ companyInfo.email.adm }}</span>
+          <span>{{ companyInfo.email.compras }}</span>
+          <span>{{ companyInfo.email.orcamento }}</span>
         </div>
 
         <!-- Contato -->
         <div class="footer-col">
-          <h4>Contato</h4>
-          <!-- Edite os dados em src/data/company.js -->
-          <span>{{ companyInfo.phone }}</span>
-          <span>{{ companyInfo.email }}</span>
-          <span>{{ companyInfo.address }}</span>
+          <h4>Onde Estamos</h4>
+          <span><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29274.01479756465!2d-46.72630559000124!3d-23.487436487471825!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef906e1f3dec3%3A0x314a44f6aafd3731!2sR.%20Tapendi%2C%20362%20-%20Vila%20Pirituba%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002933-080!5e0!3m2!1spt-BR!2sbr!4v1778136590549!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+          <span>{{ companyInfo.address }} - {{ companyInfo.city }} - {{ companyInfo.state }}</span>
           <span>{{ companyInfo.coverage }}</span>
         </div>
 
@@ -70,15 +69,9 @@ import { RouterLink } from 'vue-router'
 }
 
 /* Logo */
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 0.05em;
+.logo img{
+  width: 5rem;
 }
-.logo span { color: var(--blue-light); }
 
 .footer-brand p {
   color: rgba(255, 255, 255, 0.4);
@@ -107,6 +100,14 @@ import { RouterLink } from 'vue-router'
   font-size: 0.88rem;
   margin-bottom: 0.4rem;
   transition: color 0.2s;
+}
+
+.footer-col iframe {
+  width: 100%;
+  height: 100px;
+  border: none;
+  margin-bottom: 0.4rem;
+  border-radius: 5px;
 }
 
 .footer-col a:hover { color: var(--cream); }

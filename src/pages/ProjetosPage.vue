@@ -18,6 +18,13 @@ const filteredProjects = computed(() => {
   if (activeFilter.value === 'todos') return projects
   return projects.filter(p => p.category === activeFilter.value)
 })
+
+const techStats = [
+  { num: '760 HP',   label: 'Capacidade em Projetos' },
+  { num: '195k',     label: 'm³/h de Vazão de Ar' },
+  { num: '50T/mês',  label: 'Capacidade Produtiva' },
+  { num: '16+ anos', label: 'de Experiência' },
+]
 </script>
 
 <template>
@@ -25,7 +32,7 @@ const filteredProjects = computed(() => {
 
     <!-- Banner -->
     <PageBanner
-      title="Projetos\nRealizados"
+      title="Projetos Realizados"
       subtitle="Um portfólio de obras que demonstra nossa capacidade técnica e experiência em climatização corporativa e industrial."
       crumb="Projetos"
     />
@@ -48,16 +55,17 @@ const filteredProjects = computed(() => {
         </div>
 
         <!-- Grid de cards -->
-        <Transition name="fade" mode="out-in">
-          <div class="projects-grid" :key="activeFilter">
-            <ProjectCard
-              class="reveal"
-              v-for="project in filteredProjects"
-              :key="project.id"
-              :project="project"
-            />
-          </div>
-        </Transition>
+<TransitionGroup
+  name="fade"
+  tag="div"
+  class="projects-grid"
+>
+  <ProjectCard
+    v-for="project in filteredProjects"
+    :key="project.id"
+    :project="project"
+  />
+</TransitionGroup>
 
         <!-- Vazio -->
         <p v-if="filteredProjects.length === 0" class="empty">
@@ -73,7 +81,7 @@ const filteredProjects = computed(() => {
         <SectionHeader
           class="reveal"
           tag="Capacidade Técnica"
-          title="Números que comprovam\nnossa escala"
+          title="Números que comprovam nossa escala"
           :light="true"
         />
         <div class="tech-grid">
@@ -88,7 +96,7 @@ const filteredProjects = computed(() => {
     <!-- ── CTA ── -->
     <CTASection
       tag="Próximo Projeto"
-      title="Seu projeto pode ser\no próximo desta lista."
+      title="Seu projeto pode ser o próximo desta lista."
       subtitle="Entre em contato e descubra como a FARG pode entregar a solução ideal para o seu empreendimento."
       second-label=""
       :show-second="false"
@@ -123,7 +131,7 @@ const filteredProjects = computed(() => {
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--blue);
-  border-color: var(--blue);
+  border-color: var(--blue-dark);
   color: var(--white);
 }
 
@@ -178,19 +186,3 @@ const filteredProjects = computed(() => {
   margin-top: 0.5rem;
 }
 </style>
-
-<script>
-// Dados locais de destaque técnico (pode mover para company.js se preferir)
-export default {
-  data() {
-    return {
-      techStats: [
-        { num: '760 HP',   label: 'Capacidade em Projetos' },
-        { num: '195k',     label: 'm³/h de Vazão de Ar' },
-        { num: '50T/mês',  label: 'Capacidade Produtiva' },
-        { num: '16+ anos', label: 'de Experiência' },
-      ]
-    }
-  }
-}
-</script>

@@ -15,7 +15,7 @@ useReveal()
 
     <!-- Banner -->
     <PageBanner
-      title="Nossos\nServiços"
+      title="Nossos Serviços"
       subtitle="Soluções completas em engenharia de climatização, da concepção ao comissionamento."
       crumb="Serviços"
     />
@@ -53,16 +53,8 @@ useReveal()
             </div>
 
             <!-- Imagem -->
-            <div class="service-img img-placeholder">
-              <!--
-                INSERT IMAGE: foto ou ilustração do serviço
-                Exemplo: <img :src="'/images/' + s.id + '.jpg'" :alt="s.title" />
-              -->
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1">
-                <path v-html="s.icon"></path>
-              </svg>
-              <span>Foto do serviço</span>
+            <div class="service-img">
+              <img :src="s.image" :alt="s.title">
             </div>
 
           </div>
@@ -74,7 +66,7 @@ useReveal()
     <!-- ── CTA ── -->
     <CTASection
       tag="Fale com a FARG"
-      title="Tem um projeto\nem mente?"
+      title="Tem um projeto em mente?"
       subtitle="Nossa equipe de engenharia está pronta para analisar sua demanda e elaborar uma proposta técnica e comercial personalizada."
       primary-label="Solicitar Orçamento"
       primary-link="/contato"
@@ -124,6 +116,22 @@ useReveal()
 /* Imagem */
 .service-img {
   aspect-ratio: 4 / 3;
+  max-width: 1000px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  display: block;
 }
 
 /* Benefícios */

@@ -19,8 +19,9 @@ const contactItems = [
   {
     icon: IconMail,
     title: 'E-mail',
-    lines: [companyInfo.email, 'Retorno em até 24h úteis'],
+    lines: [companyInfo.email.adm, companyInfo.email.compras, companyInfo.email.orcamento, 'Retorno em até 24h úteis'],
   },
+  
   {
     icon: IconMapPin,
     title: 'Localização',
@@ -34,7 +35,7 @@ const contactItems = [
 
     <!-- Banner -->
     <PageBanner
-      title="Fale com\na FARG"
+      title="Fale com a FARG"
       subtitle="Solicite um orçamento ou tire suas dúvidas. Nossa equipe de engenharia retorna em até 24 horas úteis."
       crumb="Contato"
     />
@@ -70,18 +71,9 @@ const contactItems = [
 
             <!-- Mapa placeholder -->
             <div class="map-placeholder">
-              <!--
-                INSERT MAP: cole o iframe do Google Maps aqui.
-                Exemplo:
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=..."
-                  width="100%" height="260" style="border:0"
-                  allowfullscreen loading="lazy">
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29274.01479756465!2d-46.72630559000124!3d-23.487436487471825!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef906e1f3dec3%3A0x314a44f6aafd3731!2sR.%20Tapendi%2C%20362%20-%20Vila%20Pirituba%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002933-080!5e0!3m2!1spt-BR!2sbr!4v1778136590549!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="260">
                 </iframe>
-              -->
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1" v-html="IconMap"></svg>
-              <span>Mapa do Google Maps aqui</span>
             </div>
 
           </div>
@@ -93,7 +85,7 @@ const contactItems = [
     <CTASection
       :dark="true"
       tag="Atendimento Rápido"
-      title="Projetos urgentes?\nFale conosco agora."
+      title="Projetos urgentes? Fale conosco agora."
       subtitle="Para demandas urgentes, entre em contato diretamente por telefone e nossa equipe dará prioridade ao seu atendimento."
       primary-label="Ligar Agora"
       :primary-link="'tel:' + companyInfo.phone.replace(/\D/g, '')"

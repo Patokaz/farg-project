@@ -8,12 +8,19 @@ export const companyInfo = {
   name:        'FARG Ar-Condicionado',
   foundedYear: 2008,
   // ── Contato — substitua pelos dados reais ──
-  phone:    '(11) 0000-9999',
+  phone:    '(11) 3294-0227',
   whatsapp: '5511000000000',  // formato internacional sem + (para link wa.me)
-  email:    'contato@fargac.com.br',
-  address:  'São Paulo — SP',
+  email: {
+    compras: 'compras@farg-ar.com',
+    orcamento: 'orcamentos@farg-ar.com',
+    adm: 'administracao@farg-ar.com',
+    financeiro: 'sylvia.morgana@farg-ar.com',
+  },
+  address:  'Rua Tapendi, 362',
+  city:     'São Paulo',
+  state:    'SP',
   coverage: 'Sudeste e Sul do Brasil',
-  cnpj:     '00.000.000/0001-00',
+  cnpj:     '10.648.060/0001-79',
   // ── Redes sociais (deixe '' para ocultar) ──
   instagram: '',
   linkedin:  '',
