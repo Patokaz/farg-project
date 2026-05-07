@@ -1,0 +1,266 @@
+/* ============================================================
+   FARG Ar-Condicionado — Design System Global
+   ============================================================
+   Edite as variáveis em :root para alterar as cores do site.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── DESIGN TOKENS ── */
+:root {
+  /* Cores principais — edite aqui para mudar o tema */
+  --blue:        #7189ae;
+  --blue-dark:   #4d6490;
+  --blue-light:  #9db0cc;
+  --cream:       #f1e0cf;
+  --cream-dark:  #e4cdb8;
+
+  /* Cores neutras */
+  --dark:        #1a1f2e;
+  --dark-mid:    #2d3447;
+  --gray:        #6b7280;
+  --gray-light:  #f4f5f7;
+  --white:       #ffffff;
+
+  /* Tipografia */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Espaçamentos */
+  --section-padding: 5rem 0;
+  --section-padding-sm: 3rem 0;
+  --container-max: 1200px;
+  --container-px: 1.25rem;
+}
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── TIPOGRAFIA ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── UTILITÁRIOS ── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.section    { padding: var(--section-padding); }
+.section-sm { padding: var(--section-padding-sm); }
+
+.text-center { text-align: center; }
+.text-blue   { color: var(--blue); }
+.text-cream  { color: var(--cream); }
+.text-white  { color: var(--white); }
+.text-gray   { color: var(--gray); }
+
+/* ── TAG (label decorativo) ── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  border: 1.5px solid var(--blue);
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 1.25rem;
+  display: none;
+}
+
+.tag--light {
+  color: var(--blue-light);
+  border-color: var(--blue-light);
+}
+
+.tag--block {
+  display: block;
+  text-align: center;
+}
+
+/* ── BOTÕES ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.btn-primary:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--dark);
+  border-color: var(--dark);
+}
+.btn-outline-dark:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+/* ── IMAGE PLACEHOLDER ── */
+/* Use estas classes onde imagens reais serão inseridas */
+.img-placeholder {
+  background: var(--cream-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.img-placeholder svg { opacity: 0.3; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── TRANSIÇÕES DE ROTA ── */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ── PAGE BANNER (topo das páginas internas) ── */
+.page-banner {
+  padding: 9rem 0 5rem;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(113,137,174,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(113,137,174,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-banner h1 { color: var(--white); }
+
+.page-banner p {
+  color: rgba(255,255,255,0.5);
+  max-width: 520px;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--blue-light);
+  text-decoration: none;
+}

@@ -1,0 +1,7 @@
+Coloque as imagens reais do projeto nesta pasta.
+
+Exemplo de uso em src/data/projects.js:
+  image: '/images/santander-piracicaba.jpg'
+
+Exemplo de uso direto em um componente:
+  <img src="/images/hero-bg.jpg" alt="FARG Hero" />
