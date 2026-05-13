@@ -32,15 +32,8 @@ const featuredProjects = projects.filter(p => p.featured)
         <div class="about-grid">
 
           <!-- Imagem -->
-          <div class="about-img img-placeholder reveal">
-            <!--
-              INSERT IMAGE: foto da empresa ou oficina
-              Substitua este bloco por:
-              <img src="/images/empresa.jpg" alt="FARG Empresa" />
-            -->
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1" v-html="IconBuilding"></svg>
-            <span>Foto da empresa / oficina</span>
+          <div class="about-img">
+            <img src="/public/images/homepage-sec1.png" alt="">
           </div>
 
           <!-- Texto -->
@@ -149,6 +142,13 @@ const featuredProjects = projects.filter(p => p.featured)
 
 .about-img {
   aspect-ratio: 4 / 3;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .about-text .lead {

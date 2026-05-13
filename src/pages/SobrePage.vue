@@ -33,14 +33,8 @@ useReveal()
             <p>Ao longo dos anos, construímos um portfólio de obras expressivas nas regiões Sudeste e Sul do Brasil, atendendo clientes do setor financeiro, tecnológico e industrial. Nossa oficina própria nos permite manter controle total sobre qualidade e prazos.</p>
             <p>Com capacidade produtiva de 50.000 kg/mês e equipe multidisciplinar de engenheiros e técnicos, a FARG está preparada para os projetos mais exigentes, desde o planejamento até o comissionamento dos sistemas.</p>
           </div>
-          <div class="about-img img-placeholder reveal">
-            <!--
-              INSERT IMAGE: foto da equipe ou escritório
-              <img src="/images/equipe.jpg" alt="Equipe FARG" />
-            -->
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1" v-html="IconBuilding"></svg>
-            <span>Foto da equipe / escritório</span>
+          <div class="about-img">
+            <img src="/public/images/sobre-office.jpg" alt="FARG Escritório">
           </div>
         </div>
       </div>
@@ -66,14 +60,8 @@ useReveal()
     <section class="section">
       <div class="container">
         <div class="about-grid">
-          <div class="about-img img-placeholder reveal">
-            <!--
-              INSERT IMAGE: foto da oficina / produção
-              <img src="/images/oficina.jpg" alt="Oficina FARG" />
-            -->
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1" v-html="IconBuilding"></svg>
-            <span>Foto da oficina / produção</span>
+          <div class="about-img">
+            <img src="/public/images/sobre-oficina.jpg" alt="">
           </div>
           <div class="reveal">
             <div class="tag">Estrutura Própria</div>
@@ -127,6 +115,13 @@ useReveal()
 
 .about-img {
   aspect-ratio: 4 / 3;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .about-text .lead {

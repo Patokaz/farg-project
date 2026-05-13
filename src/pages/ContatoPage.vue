@@ -25,7 +25,7 @@ const contactItems = [
   {
     icon: IconMapPin,
     title: 'Localização',
-    lines: [companyInfo.address, companyInfo.coverage],
+    lines: [companyInfo.address, companyInfo.city, companyInfo.coverage],
   },
 ]
 </script>

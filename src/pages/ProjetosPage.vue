@@ -77,7 +77,7 @@ const techStats = [
 
     <!-- ── DESTAQUE TÉCNICO ── -->
     <section class="section tech-section">
-      <div class="container">
+      <div class="container" style="text-align: center;">
         <SectionHeader
           class="reveal"
           tag="Capacidade Técnica"
@@ -156,7 +156,7 @@ const techStats = [
 .fade-enter-from, .fade-leave-to       { opacity: 0; }
 
 /* Seção técnica */
-.tech-section { background: var(--dark); }
+.tech-section { background: var(--blue); }
 
 .tech-grid {
   display: grid;
@@ -173,7 +173,7 @@ const techStats = [
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
-  color: var(--blue-light);
+  color: var(--white);
   line-height: 1;
 }
 

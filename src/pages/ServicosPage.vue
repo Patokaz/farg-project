@@ -105,7 +105,7 @@ useReveal()
   font-family: var(--font-display);
   font-size: 5rem;
   font-weight: 800;
-  color: var(--cream-dark);
+  color: var(--blue);
   line-height: 1;
   margin-bottom: 1rem;
 }
