@@ -30,10 +30,34 @@ import { RouterLink } from 'vue-router'
         <div class="footer-col">
           <h4>Contatos</h4>
           <!-- Edite os dados em src/data/company.js -->
-          <span>{{ companyInfo.phone }}</span>
-          <span>{{ companyInfo.email.adm }}</span>
-          <span>{{ companyInfo.email.compras }}</span>
-          <span>{{ companyInfo.email.orcamento }}</span>
+          <span>
+            <a :href="`tel:${companyInfo.phone}`">
+              {{ companyInfo.phone }}
+            </a>
+          </span>
+
+          <span>
+            <a :href="`mailto:${companyInfo.email.adm}`">
+              {{ companyInfo.email.adm }}
+            </a>
+          </span>
+
+          <span>
+            <a :href="`mailto:${companyInfo.email.compras}`">
+              {{ companyInfo.email.compras }}
+            </a>
+          </span>
+
+          <span>
+            <a :href="`mailto:${companyInfo.email.orcamento}`">
+              {{ companyInfo.email.orcamento }}
+            </a>
+          </span>
+          <div class="social-icon">
+            <a href="">
+            <img src="/public/images/icon-linkedin.png" alt="LinkedIn"></a>
+            <a href=""><img src="/public/images/icon-whatsapp.png" alt="Whats App"></a>
+          </div>
         </div>
 
         <!-- Contato -->
@@ -42,6 +66,7 @@ import { RouterLink } from 'vue-router'
           <span><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29274.01479756465!2d-46.72630559000124!3d-23.487436487471825!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef906e1f3dec3%3A0x314a44f6aafd3731!2sR.%20Tapendi%2C%20362%20-%20Vila%20Pirituba%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002933-080!5e0!3m2!1spt-BR!2sbr!4v1778136590549!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
           <span>{{ companyInfo.address }} - {{ companyInfo.city }} - {{ companyInfo.state }}</span>
           <span>{{ companyInfo.coverage }}</span>
+
         </div>
 
       </div>
@@ -127,6 +152,15 @@ import { RouterLink } from 'vue-router'
   font-size: 0.8rem;
 }
 
+.social-icon{
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.social-icon img{
+  width: 2rem;
+}
 @media (min-width: 768px) {
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
   .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }

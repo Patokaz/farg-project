@@ -204,6 +204,16 @@ h1 em {
 
 @media screen and (max-width: 768px) {
   .hero-accent { display: none; }
+
+  .hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+}
 }
 
 </style>

@@ -14,18 +14,53 @@ const contactItems = [
   {
     icon: IconPhone,
     title: 'Telefone',
-    lines: [companyInfo.phone, 'Seg–Sex: 8h às 18h'],
+    lines: [
+      {
+        text: companyInfo.phone,
+        href: `tel:${companyInfo.phone}`,
+      },
+      {
+        text: 'Seg–Sex: 8h às 18h',
+      },
+    ],
   },
+
   {
     icon: IconMail,
     title: 'E-mail',
-    lines: [companyInfo.email.adm, companyInfo.email.compras, companyInfo.email.orcamento, 'Retorno em até 24h úteis'],
+    lines: [
+      {
+        text: companyInfo.email.adm,
+        href: `mailto:${companyInfo.email.adm}`,
+      },
+      {
+        text: companyInfo.email.compras,
+        href: `mailto:${companyInfo.email.compras}`,
+      },
+      {
+        text: companyInfo.email.orcamento,
+        href: `mailto:${companyInfo.email.orcamento}`,
+      },
+      {
+        text: 'Retorno em até 24h úteis',
+      },
+    ],
   },
-  
+
   {
     icon: IconMapPin,
     title: 'Localização',
-    lines: [companyInfo.address, companyInfo.city, companyInfo.coverage],
+    lines: [
+      {
+        text: companyInfo.address,
+      },
+      {
+        text: companyInfo.city,
+      },
+      {
+        text: companyInfo.coverage,
+      },
+    ],
   },
 ]
 </script>
@@ -63,8 +98,19 @@ const contactItems = [
                        stroke="currentColor" stroke-width="2" v-html="item.icon"></svg>
                 </div>
                 <div>
-                  <h4>{{ item.title }}</h4>
-                  <p v-for="line in item.lines" :key="line">{{ line }}</p>
+                  <h4>{{ item.title }}</h4><div v-for="line in item.lines" :key="line.text">
+                  <a
+                    v-if="line.href"
+                    :href="line.href"
+                    class="contact-link"
+                  >
+                    {{ line.text }}
+                  </a>
+
+                  <p v-else>
+                    {{ line.text }}
+                  </p>
+                </div>
                 </div>
               </div>
             </div>
@@ -97,6 +143,12 @@ const contactItems = [
 
 <style scoped>
 /* Layout 2 colunas */
+a {
+  color: var(--gray);
+  font-weight: 750;
+  text-decoration: none;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
