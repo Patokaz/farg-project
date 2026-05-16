@@ -37,8 +37,8 @@ useReveal()
               <div class="service-detail-num">0{{ i + 1 }}</div>
               <div class="tag">{{ s.tag }}</div>
               <h2>{{ s.title }}</h2>
-              <p>{{ s.desc }}</p>
-              <p>{{ s.desc2 }}</p>
+              <p v-html="s.desc"></p>
+              <p v-html="s.desc2"></p>
 
               <!-- Benefícios -->
               <ul class="benefits-list">

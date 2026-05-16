@@ -96,7 +96,7 @@ const techStats = [
     <!-- ── CTA ── -->
     <CTASection
       tag="Próximo Projeto"
-      title="Seu projeto pode ser o próximo desta lista."
+      title="Seu projeto pode ser o próximo dessa lista."
       subtitle="Entre em contato e descubra como a FARG pode entregar a solução ideal para o seu empreendimento."
       second-label=""
       :show-second="false"

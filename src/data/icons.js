@@ -27,3 +27,5 @@ export const IconMapPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z
 export const IconMap = `<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>`
 
 export const IconArrow = `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`
+
+export const IconWind = `<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>`

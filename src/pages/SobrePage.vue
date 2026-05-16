@@ -66,7 +66,7 @@ useReveal()
           <div class="reveal">
             <div class="tag">Estrutura Própria</div>
             <h2>Oficina e infraestrutura de ponta</h2>
-            <p>Nossa oficina própria é um dos nossos principais diferenciais competitivos. Equipada com maquinário especializado, ela nos permite executar a fabricação e montagem de dutos, suportes e componentes com total controle de qualidade.</p>
+            <p style="margin-top: 1rem;">Nossa oficina própria é um dos nossos principais diferenciais competitivos. Equipada com maquinário especializado, ela nos permite executar a fabricação e montagem de dutos, suportes e componentes com total controle de qualidade.</p>
             <p style="margin-top: 1rem">Com capacidade de processamento de <strong>50.000 kg/mês</strong>, estamos aptos a atender múltiplos projetos simultaneamente, sem comprometer prazos ou qualidade.</p>
             <p style="margin-top: 1rem">A estrutura inclui área de corte, dobra, solda e acabamento de chapa galvanizada, além de espaço para estoque de materiais e equipamentos.</p>
           </div>
@@ -125,9 +125,7 @@ useReveal()
 }
 
 .about-text .lead {
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--dark-mid);
+  padding-top: 1rem;
   margin-bottom: 1.25rem;
 }
 

@@ -42,7 +42,7 @@ const featuredProjects = projects.filter(p => p.featured)
             <h2>Estrutura própria.<br>Expertise reconhecida.</h2>
             <p class="lead">Fundada em 2008, a FARG Ar-Condicionado atua no segmento de engenharia de climatização para grandes empreendimentos corporativos e industriais.</p>
             <p>Com oficina própria e capacidade de produção de 50.000 kg/mês, entregamos projetos completos desde a concepção até a instalação, com foco em eficiência energética e qualidade técnica.</p>
-            <p>Nossa equipe especializada já executou obras para empresas como Santander, Banco Safra, Cielo e Hexagon, consolidando nossa presença no Sudeste e Sul do Brasil.</p>
+            <p>Nossa equipe especializada atuou em obras para empresas como Santander, Banco Safra, Cielo e Hexagon, consolidando nossa presença no Sudeste e Sul do Brasil.</p>
             <RouterLink to="/sobre" class="btn btn-outline-dark" style="margin-top: 1.5rem">
               Conheça Nossa História
             </RouterLink>
@@ -152,9 +152,7 @@ const featuredProjects = projects.filter(p => p.featured)
 }
 
 .about-text .lead {
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--dark-mid);
+  padding-top: 1rem;
   margin-bottom: 1.25rem;
 }
 

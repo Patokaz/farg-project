@@ -30,7 +30,7 @@ export const stats = [
   { num: '16', unit: '+', label: 'Anos de Experiência' },
   { num: '50', unit: 'T', label: 'kg/mês de Capacidade' },
   { num: '18', unit: 'k', label: 'm² em Projetos' },
-  { num: '2',  unit: '',  label: 'Regiões Atendidas' },
+  { num: '200',  unit: '+',  label: 'Obras Realizadas' },
 ]
 
 export const timeline = [
@@ -52,7 +52,7 @@ export const timeline = [
   {
     year: '2020',
     title: 'Expansão Regional',
-    desc: 'A FARG amplia sua área de atuação para o Sul do Brasil, com projetos em Santa Catarina e Rio Grande do Sul, além de consolidar presença no interior de São Paulo.',
+    desc: 'A FARG amplia sua área de atuação para o Sul do Brasil, com projetos em Santa Catarina e Rio Grande do Sul, além de seguir ampliando sua presença no Sudeste.',
   },
   {
     year: '2024',

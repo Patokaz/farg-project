@@ -9,7 +9,7 @@ export const services = [
     tag: 'Serviço 01',
     title: 'Projetos HVAC',
     shortDesc: 'Desenvolvimento completo de projetos de aquecimento, ventilação e ar-condicionado para ambientes corporativos e industriais de grande escala.',
-    desc: 'Desenvolvemos projetos completos de Aquecimento, Ventilação e Ar-Condicionado para ambientes corporativos e industriais. Nossa equipe de engenharia executa desde o levantamento de carga térmica até a elaboração de memoriais descritivos, especificações de equipamentos e projetos executivos.',
+    desc: 'Desenvolvemos projetos completos de <span style="color: var(--blue);">aquecimento, ventilação e ar-condicionado</span> para ambientes corporativos e industriais. Nossa equipe de engenharia executa desde o levantamento de carga térmica até a elaboração de memoriais descritivos, especificações de equipamentos e projetos executivos.',
     desc2: 'Utilizamos softwares de cálculo de última geração para garantir projetos precisos, eficientes e em conformidade com as normas técnicas brasileiras e internacionais.',
     benefits: [
       'Cálculo de carga térmica por software especializado',
@@ -78,7 +78,7 @@ export const services = [
       'Integração com sistemas de detecção de CO',
     ],
     tags: ['Galpões', 'Indústrias', 'NR-15'],
-    icon: `<path d="M3 12h18M12 3l9 9-9 9"/>`,
+    icon: `<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>`,
     image: '/images/servicos/exaustao.jpeg',
   },
 ]
