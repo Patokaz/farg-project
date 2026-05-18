@@ -9,7 +9,8 @@ export const companyInfo = {
   foundedYear: 2008,
   // ── Contato — substitua pelos dados reais ──
   phone:    '(11) 3294-0227',
-  whatsapp: '5511000000000',  // formato internacional sem + (para link wa.me)
+  whatsapp: '(11) 94739-3587',  // formato internacional sem + (para link wa.me)
+  whatsappLink: 'https://wa.me/5511947393587', // link direto para WhatsApp
   email: {
     compras: 'compras@farg-ar.com',
     orcamento: 'orcamentos@farg-ar.com',
@@ -21,9 +22,8 @@ export const companyInfo = {
   state:    'SP',
   coverage: 'Sudeste e Sul do Brasil',
   cnpj:     '10.648.060/0001-79',
-  // ── Redes sociais (deixe '' para ocultar) ──
-  instagram: '',
-  linkedin:  '',
+  linkedin:  'Farg Ar Condicionado',
+  linkedinUrl: 'https://www.linkedin.com/company/farg-ar-condicionado/',
 }
 
 export const stats = [

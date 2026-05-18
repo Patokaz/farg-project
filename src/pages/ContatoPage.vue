@@ -16,8 +16,12 @@ const contactItems = [
     title: 'Telefone',
     lines: [
       {
-        text: companyInfo.phone,
+        text: `Fixo: ${companyInfo.phone}`,
         href: `tel:${companyInfo.phone}`,
+      },
+      {
+        text: `WhatsApp: ${companyInfo.whatsapp}`,
+        href: companyInfo.whatsappLink,
       },
       {
         text: 'Seg–Sex: 8h às 18h',
