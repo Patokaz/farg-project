@@ -44,3 +44,6 @@ coverage/
 # ── Cache ──
 .vite/
 .cache/
+
+# ── Arquivos compactados (builds exportados) ──
+*.zip

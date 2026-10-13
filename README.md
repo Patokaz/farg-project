@@ -1,315 +1,80 @@
-# FARG Ar-Condicionado — Site Institucional
+# Site FARG Ar-Condicionado
 
-> Site institucional desenvolvido para a **FARG Ar-Condicionado**, empresa especializada em engenharia de climatização, ventilação mecânica e exaustão industrial desde 2008.
+Site institucional da **FARG Ar-Condicionado**, empresa de engenharia em climatização, ventilação mecânica e exaustão que atua desde 2008. Projeto feito para cliente real, desenvolvido por mim através da agência NOFF Marketing.
 
----
+**Site no ar:** https://fargarcondicionado.com
 
-## 📋 Índice
+![Página inicial do site da FARG Ar-Condicionado](docs/preview.jpg)
 
-- [Visão Geral](#visão-geral)
-- [Tecnologias](#tecnologias)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Scripts disponíveis](#scripts-disponíveis)
-- [Estrutura de pastas](#estrutura-de-pastas)
-- [Como editar conteúdo](#como-editar-conteúdo)
-- [Como inserir imagens](#como-inserir-imagens)
-- [Deploy](#deploy)
+## Objetivo
 
----
+Dar à FARG uma presença on-line profissional: apresentar a empresa, os serviços e as principais obras realizadas, e facilitar o contato de quem quer pedir um orçamento.
 
-## 🌐 Visão Geral
+## Descrição
 
-Site SPA (Single Page Application) institucional com 5 páginas:
+É uma SPA (Single Page Application) feita com Vue 3 e Vite, com cinco páginas:
 
-| Rota | Página |
-|---|---|
-| `/` | Home |
-| `/sobre` | Sobre a empresa |
-| `/servicos` | Serviços oferecidos |
-| `/projetos` | Portfólio de projetos |
-| `/contato` | Formulário de contato |
+| Rota        | Página    | Conteúdo                                                                  |
+| ----------- | --------- | ------------------------------------------------------------------------- |
+| `/`         | Início    | Apresentação, serviços, projetos em destaque, diferenciais e números      |
+| `/sobre`    | Sobre     | História da empresa em linha do tempo, missão, visão e valores            |
+| `/servicos` | Serviços  | Projetos HVAC, instalação e montagem, ventilação mecânica e exaustão      |
+| `/projetos` | Projetos  | Portfólio de obras com filtro por categoria                               |
+| `/contato`  | Contato   | Telefone, WhatsApp, e-mails, mapa e formulário de orçamento               |
 
----
+Os textos e dados do site (contatos, serviços, projetos, linha do tempo) ficam separados dos componentes, em arquivos dentro de `src/data/`. Assim dá para atualizar o conteúdo sem mexer no layout.
 
-## 🛠️ Tecnologias
+## Principais funcionalidades
 
-### Core
+- Navegação entre páginas sem recarregar (Vue Router), com título da aba atualizado em cada rota e retorno ao topo ao trocar de página.
+- Cabeçalho fixo que muda de estilo ao rolar a página e menu hambúrguer no celular.
+- Layout responsivo para desktop, tablet e celular.
+- Animação de entrada dos elementos ao rolar a tela (composable `useReveal`, com `IntersectionObserver`).
+- Portfólio de projetos com filtro por categoria (Corporativo, Industrial, Financeiro); os projetos marcados com `featured: true` também aparecem na página inicial.
+- Página de contato com links diretos para telefone, WhatsApp e e-mail, mapa do Google Maps incorporado e formulário de solicitação de orçamento.
+- Links para o LinkedIn e o WhatsApp da empresa no rodapé.
 
-| Tecnologia | Versão | Descrição |
-|---|---|---|
-| [Vue.js](https://vuejs.org/) | ^3.4 | Framework JavaScript progressivo para construção de interfaces |
-| [Vue Router](https://router.vuejs.org/) | ^4.3 | Roteamento oficial do Vue — navegação entre páginas sem reload |
-| [Vite](https://vitejs.dev/) | ^5.0 | Build tool e dev server ultrarrápido com HMR (Hot Module Replacement) |
+> O formulário de orçamento é só front-end. Para que as mensagens cheguem à empresa, o envio precisa estar ligado a um serviço externo de formulário ou e-mail, configurado em `src/components/ContactForm.vue`.
 
-### Estilização
+## Tecnologias utilizadas
 
-| Tecnologia | Descrição |
-|---|---|
-| CSS Scoped (nativo Vue) | Estilos encapsulados por componente — sem vazamento de estilos |
-| CSS Custom Properties | Variáveis CSS globais para design system (cores, fontes, espaçamentos) |
-| [Google Fonts](https://fonts.google.com/) | Barlow Condensed (títulos) + Barlow (corpo de texto) |
+- [Vue 3](https://vuejs.org/) com Composition API (`<script setup>`)
+- [Vue Router 4](https://router.vuejs.org/) (modo history)
+- [Vite 5](https://vitejs.dev/) com `@vitejs/plugin-vue`
+- CSS com estilos por componente (`scoped`) e variáveis CSS globais para cores, fontes e espaçamentos
+- Google Fonts (Barlow e Barlow Condensed)
 
-### Padrões e Arquitetura
+Não há back-end nem banco de dados: o build gera apenas arquivos estáticos.
 
-| Padrão | Descrição |
-|---|---|
-| Composition API | API moderna do Vue 3 com `<script setup>` |
-| Composables | Lógica reutilizável extraída em funções (`useReveal`) |
-| Component-based | Interface dividida em componentes independentes e reutilizáveis |
-| Data-driven | Conteúdo centralizado em arquivos de dados (`src/data/`) separado da lógica |
-| Layout Pattern | Layout padrão compartilhado via `DefaultLayout.vue` |
+## Como executar
 
-### Tooling
-
-| Ferramenta | Descrição |
-|---|---|
-| [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue) | Plugin oficial Vite para processar arquivos `.vue` |
-| Node.js | Ambiente de execução JavaScript (mínimo v18) |
-| npm | Gerenciador de pacotes |
-
----
-
-## ✅ Pré-requisitos
-
-Antes de começar, certifique-se de ter instalado:
-
-- **Node.js** v18 ou superior → [Download](https://nodejs.org/)
-- **npm** v9 ou superior (já vem com o Node)
-
-Para verificar suas versões:
-```bash
-node --version
-npm --version
-```
-
----
-
-## ⚙️ Instalação
+Pré-requisitos: [Node.js](https://nodejs.org/) 18 ou superior e npm.
 
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/farg-ar-condicionado.git
-
-# 2. Entre na pasta do projeto
-cd farg-ar-condicionado
-
-# 3. Instale as dependências
+git clone https://github.com/Patokaz/farg-project.git
+cd farg-project
 npm install
-
-# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-Acesse **http://localhost:5173** no navegador.
+Depois, abra http://localhost:5173 no navegador.
 
----
+| Comando           | O que faz                                          |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Servidor de desenvolvimento com recarga automática |
+| `npm run build`   | Gera a versão de produção na pasta `dist/`         |
+| `npm run preview` | Serve localmente o conteúdo de `dist/` para teste  |
 
-## 📜 Scripts disponíveis
+## Deploy
 
-```bash
-# Servidor de desenvolvimento com hot-reload
-npm run dev
+O site em produção fica em hospedagem compartilhada com servidor Apache/LiteSpeed. Para publicar:
 
-# Build otimizado para produção (gera a pasta /dist)
-npm run build
+1. Rode `npm run build`.
+2. Envie o conteúdo da pasta `dist/` para a pasta pública do domínio (normalmente `public_html`).
+3. Garanta que exista um `.htaccess` na mesma pasta com a regra abaixo.
 
-# Preview do build de produção localmente
-npm run preview
-```
+Como o Vue Router usa o modo history, rotas como `/projetos` só existem no navegador. Sem essa regra, abrir um link direto ou atualizar a página numa rota interna devolve erro 404, porque o servidor procura um arquivo que não existe:
 
----
-
-## 📁 Estrutura de pastas
-
-```
-farg-ar-condicionado/
-│
-├── public/
-│   └── images/              ← Imagens públicas (fotos reais do projeto)
-│ 
-├── src/
-│   │
-│   ├── assets/
-│   │   └── css/
-│   │       └── global.css   ← Design system: variáveis, reset, utilitários globais
-│   │
-│   ├── composables/
-│   │   └── useReveal.js     ← Animação de entrada por scroll (IntersectionObserver)
-│   │
-│   ├── data/                ← ⭐ Dados e conteúdo separados da lógica
-│   │   ├── company.js       ← Informações da empresa, contato, stats, timeline, valores
-│   │   ├── services.js      ← Dados dos serviços (título, descrição, benefícios)
-│   │   ├── projects.js      ← Portfólio de projetos + categorias de filtro
-│   │   └── icons.js         ← Ícones SVG centralizados
-│   │
-│   ├── components/          ← Componentes reutilizáveis em múltiplas páginas
-│   │   ├── AppHeader.vue    ← Cabeçalho fixo com navegação e menu hamburguer
-│   │   ├── AppFooter.vue    ← Rodapé com links e informações de contato
-│   │   ├── HeroSection.vue  ← Seção hero da página inicial
-│   │   ├── ServiceCard.vue  ← Card individual de serviço
-│   │   ├── ProjectCard.vue  ← Card individual de projeto com imagem e specs
-│   │   ├── StatsSection.vue ← Seção de estatísticas (16+ anos, 50T kg/mês...)
-│   │   ├── CTASection.vue   ← Seção de chamada para ação (configurável via props)
-│   │   ├── ContactForm.vue  ← Formulário de contato com validação
-│   │   ├── PageBanner.vue   ← Banner de topo das páginas internas com breadcrumb
-│   │   └── SectionHeader.vue← Cabeçalho de seção (tag + título + subtítulo)
-│   │
-│   ├── layouts/
-│   │   └── DefaultLayout.vue ← Layout padrão: Header + <slot /> + Footer
-│   │
-│   ├── pages/               ← Uma página por rota
-│   │   ├── HomePage.vue
-│   │   ├── SobrePage.vue
-│   │   ├── ServicosPage.vue
-│   │   ├── ProjetosPage.vue
-│   │   └── ContatoPage.vue
-│   │
-│   ├── router/
-│   │   └── index.js         ← Definição de rotas e títulos de aba
-│   │
-│   ├── App.vue              ← Componente raiz
-│   └── main.js              ← Entry point: monta o app, registra plugins
-│
-├── index.html               ← Entry point HTML (Vite)
-├── vite.config.js           ← Configuração do Vite
-├── package.json             ← Dependências e scripts npm
-└── README.md
-```
-
----
-
-## ✏️ Como editar conteúdo
-
-Todo o conteúdo do site está centralizado na pasta `src/data/`. Você **não precisa mexer nos componentes** para alterar textos.
-
-### Dados da empresa
-**Arquivo:** `src/data/company.js`
-
-```js
-export const companyInfo = {
-  phone:    '(11) 0000-0000',   // ← altere aqui
-  email:    'contato@fargac.com.br',
-  address:  'São Paulo — SP',
-  whatsapp: '5511000000000',    // formato internacional
-  cnpj:     '00.000.000/0001-00',
-}
-```
-
-### Adicionar um novo projeto
-**Arquivo:** `src/data/projects.js`
-
-```js
-{
-  id:       'nome-do-cliente',
-  client:   'Nome do Cliente',
-  location: 'Cidade, UF',
-  title:    'Título do Projeto',
-  category: 'corporativo', // corporativo | industrial | financeiro
-  featured: true,          // aparece na home se true
-  desc:     'Descrição do projeto...',
-  image:    '/images/nome-da-foto.jpg', // opcional
-  specs: [
-    { value: '500 HP', label: 'Capacidade' },
-    { value: '10.000 m²', label: 'Área' },
-  ],
-}
-```
-
-### Alterar cores do site
-**Arquivo:** `src/assets/css/global.css`
-
-```css
-:root {
-  --blue:       #7189ae;  /* cor principal — botões, destaques */
-  --blue-dark:  #4d6490;  /* hover dos botões */
-  --blue-light: #9db0cc;  /* textos sobre fundo escuro */
-  --cream:      #f1e0cf;  /* fundo claro (seções alternadas) */
-  --dark:       #1a1f2e;  /* fundo escuro (header, seções escuras) */
-}
-```
-
-### Integrar o formulário de contato com backend
-**Arquivo:** `src/components/ContactForm.vue`
-
-Substitua o `setTimeout` pelo seu serviço de e-mail:
-
-```js
-// Exemplo com fetch para uma API própria
-const handleSubmit = async () => {
-  sending.value = true
-  await fetch('/api/contato', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(form.value),
-  })
-  sending.value   = false
-  submitted.value = true
-}
-```
-
----
-
-## 🖼️ Como inserir imagens
-
-1. Coloque os arquivos em **`/public/images/`**
-2. Referencie pela raiz: `/images/nome-do-arquivo.jpg`
-
-### Imagens por seção
-
-| Página / Componente | Onde inserir |
-|---|---|
-| Hero (fundo) | `HeroSection.vue` — substituir o gradiente no CSS pelo `background-image` |
-| Home — sobre preview | `HomePage.vue` — bloco com comentário `INSERT IMAGE` |
-| Sobre — equipe | `SobrePage.vue` — primeiro `img-placeholder` |
-| Sobre — oficina | `SobrePage.vue` — segundo `img-placeholder` |
-| Serviços | `ServicosPage.vue` — um por serviço, basta referenciar `s.id` |
-| Projetos | `src/data/projects.js` — campo `image` de cada projeto |
-| Contato — mapa | `ContatoPage.vue` — substituir placeholder pelo `<iframe>` do Google Maps |
-
-### Exemplo: inserir imagem em um projeto
-
-```js
-// src/data/projects.js
-{
-  id:    'cielo-barueri',
-  image: '/images/cielo-barueri.jpg', // ← adicione este campo
-  ...
-}
-```
-
-O componente `ProjectCard.vue` já trata automaticamente: se `image` existir, exibe a foto; caso contrário, exibe o placeholder.
-
----
-
-## 🚀 Deploy
-
-### Netlify / Vercel (recomendado)
-
-```bash
-# Build
-npm run build
-
-# A pasta /dist contém os arquivos finais para deploy
-```
-
-Configure o redirecionamento para SPA no Netlify criando `public/_redirects`:
-```
-/* /index.html 200
-```
-
-Ou no Vercel, crie `vercel.json`:
-```json
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
-```
-
-### Apache / cPanel
-
-Faça upload do conteúdo da pasta `/dist` para a raiz pública (`public_html`).
-
-Crie um arquivo `.htaccess`:
 ```apache
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -321,8 +86,62 @@ Crie um arquivo `.htaccess`:
 </IfModule>
 ```
 
----
+Dica: salvando esse arquivo como `public/.htaccess`, o Vite o copia para `dist/` em todo build. Em outras hospedagens (Netlify, Vercel etc.) é preciso configurar uma regra equivalente de redirecionamento para o `index.html`.
 
-## 📄 Licença
+## Estrutura do projeto
 
-Projeto desenvolvido exclusivamente para a **FARG Ar-Condicionado**. Todos os direitos reservados.
+```
+farg-project/
+├── public/images/        # Logos e fotos (projetos/, servicos/, páginas)
+├── src/
+│   ├── assets/css/
+│   │   └── global.css    # Variáveis de cor, fontes, reset e classes utilitárias
+│   ├── components/       # Header, footer, hero, cards, formulário, banners etc.
+│   ├── composables/
+│   │   └── useReveal.js  # Animação de entrada ao rolar a página
+│   ├── data/             # Conteúdo do site
+│   │   ├── company.js    # Contatos, números, linha do tempo, valores, diferenciais
+│   │   ├── services.js   # Serviços e benefícios
+│   │   ├── projects.js   # Projetos e categorias do filtro
+│   │   └── icons.js      # Ícones SVG
+│   ├── layouts/
+│   │   └── DefaultLayout.vue  # Header + conteúdo da página + footer
+│   ├── pages/            # Uma página por rota
+│   ├── router/index.js   # Rotas e títulos das abas
+│   ├── App.vue
+│   └── main.js
+├── index.html
+├── vite.config.js        # Plugin do Vue e alias "@" para src/
+└── package.json
+```
+
+## Como atualizar o conteúdo
+
+| Quero alterar...                          | Arquivo                                     |
+| ----------------------------------------- | ------------------------------------------- |
+| Telefone, WhatsApp, e-mails, endereço     | `src/data/company.js`                       |
+| Números, linha do tempo, missão e valores | `src/data/company.js`                       |
+| Textos e imagens dos serviços             | `src/data/services.js`                      |
+| Projetos do portfólio                     | `src/data/projects.js`                      |
+| Cores e fontes do site                    | `src/assets/css/global.css` (bloco `:root`) |
+
+As imagens ficam em `public/images/` e são referenciadas a partir da raiz, por exemplo `/images/projetos/projeto-cielo.jpg`. Exemplo de projeto em `src/data/projects.js`:
+
+```js
+{
+  id: 'cielo',
+  client: 'Cielo',
+  location: 'Barueri, SP',
+  title: 'Cielo Barueri',
+  category: 'corporativo',   // corporativo | industrial | financeiro
+  featured: true,            // true = também aparece na página inicial
+  desc: 'Descrição da obra...',
+  image: '/images/projetos/projeto-cielo.jpg', // opcional; sem imagem, o card mostra um placeholder
+}
+```
+
+## Autoria
+
+Desenvolvido por **Raphael Gimenes** ([@Patokaz](https://github.com/Patokaz)) pela [NOFF Marketing](https://noffmarketing.com.br), para a FARG Ar-Condicionado.
+
+Textos, logotipos e fotos de obras pertencem à FARG Ar-Condicionado. O código está aqui como portfólio e o conteúdo da marca não deve ser reutilizado.
